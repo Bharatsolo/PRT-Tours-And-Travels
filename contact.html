@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | PRT Tours And Travels Chennai</title>
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contact-form {
+            background: var(--bg-navy-light);
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+            height: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            color: var(--text-white);
+            font-size: 0.95rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-navy);
+            color: var(--text-white);
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+        }
+
+        /* Make date picker icon white */
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+            cursor: pointer;
+        }
+
+        .contact-info-card {
+            background: var(--bg-navy-light);
+            border: 1px solid var(--border-color);
+            color: var(--text-white);
+            padding: 3.5rem 2.5rem;
+            border-radius: var(--radius-lg);
+            height: 100%;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: row;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+            align-items: center;
+        }
+
+        .info-item i {
+            color: var(--accent-gold);
+            background: rgba(245, 158, 11, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .info-item h4 {
+            color: var(--text-white);
+            margin-bottom: 0.25rem;
+            font-size: 1.1rem;
+        }
+
+        .info-item p,
+        .info-item a {
+            color: var(--text-silver);
+            font-weight: 400;
+        }
+
+        @media (max-width: 768px) {
+            .contact-form {
+                padding: 1.5rem;
+            }
+            .contact-info-card {
+                padding: 2rem 1.5rem;
+            }
+            .form-grid-mobile {
+                display: flex !important;
+                flex-direction: column;
+                gap: 0 !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Floating WhatsApp CTA -->
+    <a href="https://wa.me/919345001265" target="_blank" class="floating-whatsapp"><i class="fab fa-whatsapp"></i></a>
+
+    <!-- Header / Nav -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-wrapper" style="text-decoration: none;">
+                <img src="assets/images/Logo.jpeg" alt="PRT Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-main">PRT</span>
+                    <span class="logo-sub">Tours And Travels</span>
+                </div>
+            </a>
+
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="fleet.html" class="nav-link">Our Fleet</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+                <a href="tel:+919345001265" class="btn btn-outline"><i class="fas fa-phone-alt"></i> &nbsp; Call Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero" style="min-height: 35vh; background: url('assets/images/hero.png') center/cover no-repeat;">
+        <div class="hero-overlay"></div>
+        <div class="container text-center">
+            <h1 class="hero-title">Contact Us</h1>
+            <p style="color:var(--text-silver); font-size:1.25rem; max-width:650px; margin: 0 auto;">Our dedicated
+                scheduling team is available 24/7 to assist with your requirements.</p>
+        </div>
+    </div>
+
+    <!-- Contact Form & Info -->
+    <section class="py-5" style="background-color: var(--bg-page);">
+        <div class="container">
+            <div style="display:flex; flex-wrap:wrap; gap: 3rem;">
+                <!-- Contact Info -->
+                <div style="flex: 1; min-width: 300px;">
+                    <div class="contact-info-card">
+                        <h2 style="color:var(--text-white); margin-bottom:1rem; font-weight: 800;">Get In Touch</h2>
+                        <p class="mb-4"
+                            style="color:var(--accent-gold); font-weight:600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px;">
+                            Fast Response Guaranteed</p>
+
+                        <div class="info-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>Call Our Helpline</h4>
+                                <a href="tel:+919345001265"
+                                    style="text-decoration:none; font-size:1.25rem; font-weight: 700; color: var(--text-white);">+91
+                                    93450 01265</a>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <h4>WhatsApp Support</h4>
+                                <a href="https://wa.me/919345001265" target="_blank" class="btn btn-whatsapp"
+                                    style="margin-top: 0.5rem; padding: 0.5rem 1rem; font-size: 0.95rem; color: #FFFFFF !important;">Start
+                                    Instant Chat</a>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email Enquiries</h4>
+                                <a href="mailto:bookings@prttours.com"
+                                    style="text-decoration:none; font-size:1.2rem;">bookings@prttours.com</a>
+                            </div>
+                        </div>
+
+                        <div class="info-item" style="margin-bottom: 0;">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Main Operations</h4>
+                                <p>Chennai, Tamil Nadu, India.<br>Serving all major business hubs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div style="flex: 1.5; min-width: 300px;">
+                    <form id="contactForm" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                        <input type="hidden" name="redirect" value="https://wa.me/919345001265">
+
+                        <h2 style="margin-bottom:2rem; color:var(--text-white); font-weight: 800;">Request Quote /
+                            Vehicle</h2>
+
+                        <div class="form-group">
+                            <label class="form-label" for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" class="form-control" required
+                                placeholder="Ex: John Doe or ABC Corp">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="phone"> Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" required
+                                placeholder="+91 00000 00000">
+                        </div>
+
+                        <div class="form-grid-mobile" style="display:grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                            <div class="form-group">
+                                <label class="form-label" for="pickup">Pick-up Location *</label>
+                                <input type="text" id="pickup" name="pickup" class="form-control" required
+                                    placeholder="Ex: Tidel Park or Airport">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="dropoff">Drop-off Location *</label>
+                                <input type="text" id="dropoff" name="dropoff" class="form-control" required
+                                    placeholder="Ex: Siruseri or Hotel">
+                            </div>
+                        </div>
+
+                        <div class="form-grid-mobile" style="display:grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                            <div class="form-group">
+                                <label class="form-label" for="date">Travel Date *</label>
+                                <input type="date" id="date" name="travel_date" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="passengers">No. of Passengers *</label>
+                                <select id="passengers" name="passengers" class="form-control" required>
+                                    <option value="1-3">1 - 3 Persons (Sedan)</option>
+                                    <option value="4-7">4 - 7 Persons (SUV)</option>
+                                    <option value="8+">8+ Persons (Tempo)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="message">Specific Instructions (Optional)</label>
+                            <textarea id="message" name="message" class="form-control" rows="3"
+                                placeholder="Any specific details help us provide a better quote..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary"
+                            style="width:100%; border-radius:var(--radius-md); padding:1.25rem; font-size:1.15rem; font-weight: 700;">Request
+                            Instant Quote</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map -->
+    <section>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d252417.44719277025!2d80.088656!3d13.060416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ea4f7d3361%3A0x6e61a70b6863d433!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1714412034989!5m2!1sen!2sin"
+            width="100%" height="450" style="border:0; display:block; filter: invert(90%) hue-rotate(180deg);"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="logo-wrapper"
+                        style="text-decoration: none; margin-bottom: 2rem; display: flex;">
+                        <img src="assets/images/Logo.jpeg" alt="PRT Logo" class="logo-img">
+                        <div class="logo-text">
+                            <span class="logo-main" style="color: white;">PRT</span>
+                            <span class="logo-sub">Tours And Travels</span>
+                        </div>
+                    </a>
+                    <p style="margin-bottom:1.5rem; font-size:1rem; line-height: 1.7;">Chennai's preferred partner for
+                        premium airport transfers and corporate mobility solutions.</p>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="about.html">About Us</a>
+                        <a href="services.html">Our Services</a>
+                        <a href="fleet.html">Vehicles Setup</a>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Services</h4>
+                    <div class="footer-links">
+                        <a href="services.html">Airport Transfers</a>
+                        <a href="services.html">Corporate Travel</a>
+                        <a href="services.html">Local Transit</a>
+                        <a href="services.html">Outstation Rentals</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Contact Details</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-phone-alt"></i><span>+91 93450 01265</span></li>
+                        <li><i class="fas fa-envelope"></i><span>bookings@prttours.com</span></li>
+                        <li><i class="fas fa-map-marker-alt"></i><span>Chennai, Tamil Nadu, India</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PRT Tours And Travels Chennai. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
