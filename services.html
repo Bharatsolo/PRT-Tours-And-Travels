@@ -27,14 +27,13 @@
             <button class="mobile-menu-btn" aria-label="Toggle Menu">
                 <i class="fas fa-bars"></i>
             </button>
-
             <nav class="nav-menu">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About Us</a>
                 <a href="services.html" class="nav-link active">Services</a>
                 <a href="fleet.html" class="nav-link">Our Fleet</a>
                 <a href="contact.html" class="nav-link">Contact</a>
-                <a href="tel:+919345001265" class="btn btn-outline"><i class="fas fa-phone-alt"></i> &nbsp; Call Now</a>
+                <button class="btn btn-outline connect-btn"><i class="fas fa-calendar-alt"></i> &nbsp; Let's Connect</button>
             </nav>
         </div>
     </header>
@@ -61,7 +60,7 @@
                         <li><i class="fas fa-check-circle" style="color:var(--accent-gold); margin-right: 10px;"></i> Flexible billing cycles for corporate accounts</li>
                         <li><i class="fas fa-check-circle" style="color:var(--accent-gold); margin-right: 10px;"></i> Replacement vehicle guarantees</li>
                     </ul>
-                    <a href="contact.html" class="btn btn-primary">Inquire About Corporate Rates</a>
+                    <button class="btn btn-primary connect-btn">Inquire About Corporate Rates</button>
                 </div>
                 <div style="flex: 1; min-width: 300px;">
                     <img src="assets/images/driver.png" alt="Corporate professional service" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 1px solid var(--border-color);">
@@ -87,11 +86,101 @@
                         <li><i class="fas fa-check-circle" style="color:var(--accent-gold); margin-right: 10px;"></i> Punctual pickup with luggage assistance</li>
                         <li><i class="fas fa-check-circle" style="color:var(--accent-gold); margin-right: 10px;"></i> Available 24/7 for late-night & early-morning flights</li>
                     </ul>
-                    <a href="https://wa.me/919345001265" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> &nbsp; Book Airport Transfer</a>
+                    <button class="btn btn-primary connect-btn">Book Airport Transfer</button>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Service 3: Events -->
+    <section class="py-5" style="background-color: var(--bg-page);">
+        <div class="container">
+            <div style="display:flex; flex-wrap:wrap; gap: 4rem; align-items:center;">
+                <div style="flex: 1.5; min-width: 300px;">
+                    <div style="color:var(--accent-gold); font-size:2.5rem; margin-bottom:1.25rem;"><i class="fas fa-calendar-star"></i></div>
+                    <h2 class="section-title" style="margin-bottom:0.75rem;">Taxi for Events</h2>
+                    <p class="mb-3" style="color:var(--text-white); font-weight:600; font-size: 1.1rem;">Premium Transportation for Weddings & Corporate Events</p>
+                    <p class="mb-4" style="color: var(--text-silver);">Make your events memorable with our premium fleet management. We provide coordinated logistics for wedding guests, VIP delegates, and large-scale corporate gatherings across Chennai business hubs and event venues.</p>
+                    <ul style="margin-bottom:2.5rem; display:flex; flex-direction:column; gap:0.75rem; color:var(--text-silver);">
+                        <li><i class="fas fa-check-circle" style="color:var(--accent-gold); margin-right: 10px;"></i> Uniformed, professional chauffeurs</li>
+                        <li><i class="fas fa-check-circle" style="color:var(--accent-gold); margin-right: 10px;"></i> Coordinated multi-vehicle logistics</li>
+                        <li><i class="fas fa-check-circle" style="color:var(--accent-gold); margin-right: 10px;"></i> Meet & greet services for VIP guests</li>
+                    </ul>
+                    <button class="btn btn-primary connect-btn">Plan Event Logistics</button>
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="assets/images/tempo.png" alt="Taxi for events service" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 1px solid var(--border-color);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 style="margin-bottom:1.5rem; color:var(--text-white); font-weight: 800; text-align: center;">Book Your Premium Ride</h2>
+            <form id="modalBookingForm" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                <input type="hidden" name="redirect" value="https://wa.me/919345001265">
+                
+                <div class="form-group">
+                    <label class="form-label">Service Type *</label>
+                    <select name="service_type" class="form-control" required>
+                        <option value="" disabled selected>Select a Service</option>
+                        <option value="Airport Transfer">Airport Transfers</option>
+                        <option value="Taxi for Events">Taxi for Events</option>
+                        <option value="Corporate Rental">Corporate Rentals</option>
+                        <option value="Outstation">Outstation Travel</option>
+                    </select>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label">Full Name *</label>
+                        <input type="text" name="name" class="form-control" required placeholder="Ex: John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone Number *</label>
+                        <input type="tel" name="phone" class="form-control" required placeholder="+91 00000 00000">
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label">Pick-up Location *</label>
+                        <input type="text" name="pickup" class="form-control" required placeholder="Ex: Tidel Park">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Drop-off Location *</label>
+                        <input type="text" name="dropoff" class="form-control" required placeholder="Ex: Airport">
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label">Travel Date *</label>
+                        <input type="date" name="travel_date" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Passengers *</label>
+                        <select name="passengers" class="form-control" required>
+                            <option value="1-3">1 - 3 Persons (Sedan)</option>
+                            <option value="4-7">4 - 7 Persons (SUV)</option>
+                            <option value="8+">8+ Persons (Tempo)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Specific Instructions (Optional)</label>
+                    <textarea name="message" class="form-control" rows="2" placeholder="Any specific requirements..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width:100%; padding:1.25rem; font-size:1.1rem; margin-top:1rem;">Request Instant Quote</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">

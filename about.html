@@ -34,7 +34,7 @@
                 <a href="services.html" class="nav-link">Services</a>
                 <a href="fleet.html" class="nav-link">Our Fleet</a>
                 <a href="contact.html" class="nav-link">Contact</a>
-                <a href="tel:+919345001265" class="btn btn-outline"><i class="fas fa-phone-alt"></i> &nbsp; Call Now</a>
+                <button class="btn btn-outline connect-btn"><i class="fas fa-calendar-alt"></i> &nbsp; Let's Connect</button>
             </nav>
         </div>
     </header>
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                     
-                    <a href="contact.html" class="btn btn-primary">Partner with Us Today</a>
+                    <button class="btn btn-primary connect-btn">Partner with Us Today</button>
                 </div>
                 <div style="flex: 1; min-width: 300px;">
                     <img src="assets/images/about_service.png" alt="Corporate professional service Chennai" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 1px solid var(--border-color);">
@@ -99,7 +99,7 @@
                     <div class="footer-links">
                         <a href="about.html">About Us</a>
                         <a href="services.html">Our Services</a>
-                        <a href="fleet.html">Vehicles Setup</a>
+                        <a href="fleet.html">Our Fleet</a>
                         <a href="contact.html">Contact Us</a>
                     </div>
                 </div>
@@ -126,6 +126,73 @@
             </div>
         </div>
     </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 style="margin-bottom:1.5rem; color:var(--text-white); font-weight: 800; text-align: center;">Book Your Premium Ride</h2>
+            <form id="modalBookingForm" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                <input type="hidden" name="redirect" value="https://wa.me/919345001265">
+                
+                <div class="form-group">
+                    <label class="form-label">Service Type *</label>
+                    <select name="service_type" class="form-control" required>
+                        <option value="" disabled selected>Select a Service</option>
+                        <option value="Airport Transfer">Airport Transfers</option>
+                        <option value="Taxi for Events">Taxi for Events</option>
+                        <option value="Corporate Rental">Corporate Rentals</option>
+                        <option value="Outstation">Outstation Travel</option>
+                    </select>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label">Full Name *</label>
+                        <input type="text" name="name" class="form-control" required placeholder="Ex: John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone Number *</label>
+                        <input type="tel" name="phone" class="form-control" required placeholder="+91 00000 00000">
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label">Pick-up Location *</label>
+                        <input type="text" name="pickup" class="form-control" required placeholder="Ex: Tidel Park">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Drop-off Location *</label>
+                        <input type="text" name="dropoff" class="form-control" required placeholder="Ex: Airport">
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label">Travel Date *</label>
+                        <input type="date" name="travel_date" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Passengers *</label>
+                        <select name="passengers" class="form-control" required>
+                            <option value="1-3">1 - 3 Persons (Sedan)</option>
+                            <option value="4-7">4 - 7 Persons (SUV)</option>
+                            <option value="8+">8+ Persons (Tempo)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Specific Instructions (Optional)</label>
+                    <textarea name="message" class="form-control" rows="2" placeholder="Any specific requirements..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width:100%; padding:1.25rem; font-size:1.1rem; margin-top:1rem;">Request Instant Quote</button>
+            </form>
+        </div>
+    </div>
     <script src="js/script.js"></script>
 </body>
 </html>

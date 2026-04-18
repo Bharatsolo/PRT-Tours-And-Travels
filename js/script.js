@@ -44,4 +44,52 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Form Submission removed to allow native web3forms submission
+
+    // Modal Toggle Logic
+    const bookingModal = document.querySelector('#bookingModal');
+    const connectBtns = document.querySelectorAll('.connect-btn');
+    const modalClose = document.querySelector('.modal-close');
+
+    if (bookingModal && connectBtns.length > 0) {
+        connectBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                bookingModal.classList.add('active');
+                document.body.classList.add('modal-open');
+                
+                // Close mobile menu if it's open (on mobile)
+                if (navMenu && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            });
+        });
+
+        const closeModal = () => {
+            bookingModal.classList.remove('active');
+            document.body.classList.remove('modal-open');
+        };
+
+        if (modalClose) {
+            modalClose.addEventListener('click', closeModal);
+        }
+
+        window.addEventListener('click', (e) => {
+            if (e.target === bookingModal) {
+                closeModal();
+            }
+        });
+
+        // Close on Esc key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && bookingModal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    }
 });
+
