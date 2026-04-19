@@ -43,7 +43,68 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Form Submission removed to allow native web3forms submission
+    // Form Submission for WhatsApp Redirect with Details
+    const handleBookingSubmit = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        // Construct a clean, professional WhatsApp message
+        let message = `🚀 *New Booking Request - PRT Tours*\n`;
+        message += `━━━━━━━━━━━━━━━━━━━━━━\n`;
+        message += `👤 *Name:* ${data.name || 'N/A'}\n`;
+        message += `📞 *Phone:* ${data.phone || 'N/A'}\n`;
+        
+        if (data.service_type) {
+            message += `🚕 *Service:* ${data.service_type}\n`;
+        }
+        
+        message += `📍 *Pick-up:* ${data.pickup || 'N/A'}\n`;
+        message += `🏁 *Drop-off:* ${data.dropoff || 'N/A'}\n`;
+        message += `📅 *Date:* ${data.travel_date || 'N/A'}\n`;
+        message += `👥 *Passengers:* ${data.passengers || 'N/A'}\n`;
+        
+        if (data.message && data.message.trim() !== "") {
+            message += `📝 *Notes:* ${data.message}\n`;
+        }
+        message += `━━━━━━━━━━━━━━━━━━━━━━`;
+
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappNumber = "919345001265";
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+        // Send to Web3Forms in background (if configured) then redirect
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Preparing WhatsApp...';
+
+        if (data.access_key && data.access_key !== 'YOUR_ACCESS_KEY_HERE') {
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            }).then(() => {
+                window.location.href = whatsappUrl;
+            }).catch(() => {
+                window.location.href = whatsappUrl;
+            });
+        } else {
+            // Immediate redirect if no real access key
+            window.location.href = whatsappUrl;
+        }
+    };
+
+    const modalForm = document.querySelector('#modalBookingForm');
+    const contactPageForm = document.querySelector('#contactForm');
+
+    if (modalForm) {
+        modalForm.addEventListener('submit', handleBookingSubmit);
+    }
+    if (contactPageForm) {
+        contactPageForm.addEventListener('submit', handleBookingSubmit);
+    }
+
 
     // Modal Toggle Logic
     const bookingModal = document.querySelector('#bookingModal');
